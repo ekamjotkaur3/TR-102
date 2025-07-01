@@ -58,6 +58,9 @@ On Day 4, we applied everything we learned to develop a **fully functional perso
 > This project wrapped up the HTML training with creativity, implementation, and file structuring. It gave us confidence in developing real-world websites.
 
 BY: Ekamjot Kaur 
+
 URN 2302867 
+
 CRN 2315264 
+
 Page no. 4
