@@ -37,6 +37,9 @@ The training began with an introduction to **Web Development** and its foundatio
 > Day 1 wrapped up with small exercises that included building a basic profile page using all formatting and style tags learned.
 
 BY: Ekamjot Kaur 
+
 URN 2302867
+
 CRN 2315264
+
 Page no. 1
