@@ -37,3 +37,10 @@ We explored the three standard methods to include CSS styles in HTML:
    Example:  
    ```html
    <h1 style="color: blue;">A Blue Heading</h1>
+BY: Ekamjot Kaur
+
+URN 2302867
+
+CRN 2315264
+
+Page no. 7

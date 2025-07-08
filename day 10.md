@@ -3,7 +3,7 @@
 
 **Location:** Science & Technology Entrepreneurs' Park  
 
-**Project Title:** *CSS Box Model and Fonts – Layout & Typography Fundamentals*
+**Project Title:** *CSS  and Fonts – Layout  Fundamentals*
 
 ---
 
@@ -19,7 +19,7 @@ On Day 10, we deepened our understanding of **CSS layout fundamentals** by thoro
 
 ### Key Topics Covered:
 
-#### CSS Box Model Explained  
+#### CSS Explained  
 Every HTML element is represented as a rectangular box that consists of four layers, from inside to outside:
 
 1. **Content**  
@@ -35,6 +35,13 @@ Every HTML element is represented as a rectangular box that consists of four lay
    Margins are the outermost space, creating gaps between the element and adjacent elements. Margins do not add to the element’s size but control external spacing.
 
 ---
+BY: Ekamjot Kaur
 
-### Box Model Visual:
+URN 2302867
+
+CRN 2315264
+
+Page no. 10
+
+
 
