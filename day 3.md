@@ -5,44 +5,12 @@
 
 **Project Title:** *How to Link Different Web Pages using HTML*
 
-The main objective of Day 3 was to create **multi-page websites** using hyperlinks.
+The main objective of Day 3 was to create **multi-page websites** using hyperlinks. This session built upon the foundational knowledge of HTML elements and introduced inter-page linking to simulate real-world website structures. We learned how individual HTML pages can be connected to form a complete and functional website. Through live demonstrations and a hands-on mini project, we focused on linking, navigation menus, and consistent layout design.
 
 ### Concepts Practiced:
 
-- **Anchor Tags**
-  - Syntax: `<a href="page.html">Page Name</a>`
-  - Navigated between multiple HTML files.
-
-- **Relative vs Absolute URLs**
-  - Learned folder structure and linking pages inside subdirectories.
-
-- **Navigation Menu**
-  - Created horizontal and vertical menus using lists.
-  - Used `<nav>` for semantic grouping.
-
-- **Back and Home Links**
-  - Included return-to-home links on every subpage.
-  - Ensured seamless UX.
-
-### Example:
-
-```html
-<a href="index.html">Home</a> |
-<a href="about.html">About</a> |
-<a href="projects.html">Projects</a> |
-<a href="contact.html">Contact</a>
-```
-
-### Mini Project:
-We created a 4-page website:
-- **Home** – Introduction
-- **About Me** – Background details
-- **Projects** – Simple portfolio
-- **Contact** – Contact form (HTML only)
-
-> Focus was on ensuring correct linking between all pages, no broken URLs, and consistent layout across pages.
-
-BY: Ekamjot Kaur 
-URN 2302867 
-CRN 2315264  
-Page no. 3
+#### Anchor Tags
+- The anchor tag `<a>` is the primary HTML element used to create hyperlinks between web pages.
+- Syntax used:
+  ```html
+  <a href="page.html">Page Name</a>
