@@ -8,40 +8,42 @@
 On Day 4, we applied everything we learned over the past three days to develop a **fully functional personal website** centered around the theme of hobbies. This practical project was designed to consolidate our HTML knowledge and introduce more refined structuring and styling techniques. The goal was to produce a multi-page website that is both visually appealing and easy to navigate, showcasing personal interests with descriptive content and images.
 
 ### Project Objectives:
-- Showcase at least **3 hobbies**, each accompanied by images, descriptive paragraphs, and semantic layout.
-- Include **internal navigation** between pages using hyperlinks for smooth user experience.
-- Apply **styling** through inline and internal CSS to enhance the website’s look.
-- Use tables where appropriate to organize information such as schedules or lists.
+
+- Showcase at least **3 hobbies**, each accompanied by images, descriptive paragraphs, and semantic layout.  
+- Include **internal navigation** between pages using hyperlinks for smooth user experience.  
+- Apply **styling** through inline and internal CSS to enhance the website’s look.  
+- Use tables where appropriate to organize information such as schedules or lists.  
 - Develop a well-structured folder and file system for organizing the website files.
 
 ### Website Sections:
+
 The website was divided into four main pages, each focusing on a specific aspect of the hobby site:
 
-1. **Home Page**
-   - Welcoming visitors with an engaging introduction.
-   - Included a **navigation menu** with links to the other pages.
-   - Used semantic tags such as `<header>`, `<nav>`, and `<footer>` for a meaningful page structure.
+1. **Home Page**  
+   - Welcoming visitors with an engaging introduction.  
+   - Included a **navigation menu** with links to the other pages.  
+   - Used semantic tags such as `<header>`, `<nav>`, and `<footer>` for a meaningful page structure.  
    - Basic styling applied to headings and navigation links for consistency and readability.
 
-2. **Hobbies Page**
-   - Detailed list of hobbies displayed using an unordered list `<ul>`.
-   - Each hobby was described within `<section>` tags to logically group content.
-   - Used headings `<h2>` to differentiate each hobby.
-   - Included short paragraphs highlighting why the hobby is important or enjoyable.
+2. **Hobbies Page**  
+   - Detailed list of hobbies displayed using an unordered list `<ul>`.  
+   - Each hobby was described within `<section>` tags to logically group content.  
+   - Used headings `<h2>` to differentiate each hobby.  
+   - Included short paragraphs highlighting why the hobby is important or enjoyable.  
    - Incorporated inline CSS to add color and spacing to each section.
 
-3. **Gallery Page**
-   - Showcased images related to the hobbies using the `<img>` tag.
-   - Discussed image attributes such as `alt` for accessibility and `width`/`height` for size control.
-   - Arranged images in a visually pleasing grid using basic CSS techniques like margins and display properties.
-   - Added captions below images using `<figcaption>` inside `<figure>` tags to provide context.
+3. **Gallery Page**  
+   - Showcased images related to the hobbies using the `<img>` tag.  
+   - Discussed image attributes such as `alt` for accessibility and `width`/`height` for size control.  
+   - Arranged images in a visually pleasing grid using basic CSS techniques like margins and display properties.  
+   - Added captions below images using `<figcaption>` inside `<figure>` tags to provide context.  
    - Highlighted the importance of optimizing images for faster loading and better performance.
 
-4. **Contact Page**
-   - Provided contact details including email and social media links.
-   - Used anchor tags `<a>` for clickable email (`mailto:`) and external social profiles.
-   - Introduced a simple contact form layout using form elements (though non-functional at this stage).
-   - Encouraged use of placeholder text in form inputs for better UX.
+4. **Contact Page**  
+   - Provided contact details including email and social media links.  
+   - Used anchor tags `<a>` for clickable email (`mailto:`) and external social profiles.  
+   - Introduced a simple contact form layout using form elements (though non-functional at this stage).  
+   - Encouraged use of placeholder text in form inputs for better UX.  
    - Applied internal CSS to style the form and contact details for a professional appearance.
 
 ### Features Implemented:
@@ -95,3 +97,10 @@ The website was divided into four main pages, each focusing on a specific aspect
   </footer>
 </body>
 </html>
+BY: Ekamjot Kaur
+
+URN 2302867
+
+CRN 2315264
+
+Page no. 4
