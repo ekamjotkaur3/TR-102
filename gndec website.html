@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Page Layout</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        background-color: var(--bg);
+      }
+      :root {
+        --bg: #fef9e6;
+        --theme: #648d2d;
+        --white: #ffffff;
+        --theme-color-light: #e6f0ff;
+      }
+      .hero {
+        height: 100vh; /* Full viewport height */
+        background: linear-gradient(135deg, #6c63ff, #4e54c8);
+        color: white;
+      }
+      /* Icon color white */
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22' /%3e%3c/svg%3e");
+      }
+
+      /* Border stays white on focus/active/hover */
+      .navbar-toggler:focus,
+      .navbar-toggler:active,
+      .navbar-toggler:hover {
+        border-color: #ffffff;
+        box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+      }
+      .btn-theme {
+        background-color: transparent; /* Your theme color */
+        color: var(--theme);
+        border: 2px solid var(--theme);
+      }
+
+      .btn-theme:hover {
+        background-color: var(--theme); /* Optional darker shade */
+        color: white;
+      }
+      .text-theme {
+        color: var(--theme);
+      }
+
+      .nav-tabs .nav-link {
+        color: var(--theme);
+        border: 1px solid transparent;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav-tabs .nav-link.active {
+        background-color: var(--theme-color-light);
+        color: var(--theme);
+        border-color: var(--theme) var(--theme) transparent;
+        font-weight: bold;
+      }
+
+      .nav-tabs .nav-link:hover {
+        color: var(--theme);
+        background-color: var(--theme-color-light);
+      }
+      .text-theme {
+        color: var(--theme);
+      }
+
+      .alumni-section {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+      }
+
+      .alumni-scroll-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* .alumni-scroll-track {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: scroll-left 1s linear infinite;
+          } */
+
+      /* .alumni-scroll-wrapper:hover .alumni-scroll-track {
+            animation-play-state: paused;
+          } */
+
+      .alumni-card {
+        text-align: center;
+        min-width: 180px;
+        flex: 0 0 auto;
+      }
+
+      .alumni-card img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid var(--theme);
+      }
+
+      .alumni-card h6 {
+        margin-top: 10px;
+        font-weight: 600;
+      }
+
+      .alumni-card p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* @keyframes scroll-left {
+            0% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          } */
+
+      .btn-theme {
+        background-color: var(--theme);
+        color: white;
+        border: none;
+      }
+
+      .btn-theme:hover {
+        background-color: #557725;
+      }
+
+      .bg-theme {
+        background-color: var(--theme) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav
+        class="navbar navbar-expand-lg px-5 fixed-top"
+        style="background-color: var(--theme)"
+      >
+        <div class="container-fluid">
+          <!-- Left side logo -->
+          <a class="navbar-brand" href="#">
+            <img src="gnelogo.png" alt="GNDEC Logo" height="80" />
+            <span class="text-white fw-bold"
+              >Guru Nanak Dev Engineering College</span
+            >
+          </a>
+
+          <!-- Toggler for mobile -->
+          <button
+            class="navbar-toggler border-white"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDarkDropdown"
+            aria-controls="navbarNavDarkDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Right side nav items -->
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav ms-auto">
+              <!-- About Institute -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white fw-bold"
+                  href="#"
+                  id="dropdown1"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  About Us
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdown1"
+                >
+                  <li><a class="dropdown-item" href="#">About Us</a></li>
+                  <li><a class="dropdown-item" href="#">Principal Desk</a></li>
+                  <li><a class="dropdown-item" href="#">History</a></li>
+                  <li><a class="dropdown-item" href="#">Mission</a></li>
+                  <li><a class="dropdown-item" href="#">Vision</a></li>
+                  <li><a class="dropdown-item" href="#">Goals</a></li>
+                  <li><a class="dropdown-item" href="#">Code of Ethics</a></li>
+                  <li><a class="dropdown-item" href="#">Annual Reports</a></li>
+                  <li><a class="dropdown-item" href="#">Governance</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Accreditation & Certification</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Academics -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white fw-bold"
+                  href="#"
+                  id="dropdown2"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Academics
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdown2"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Information Brochure 2024</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Programs Offered</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Academic Calendar</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">List of Holidays</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Examination</a></li>
+                  <li><a class="dropdown-item" href="#">Results</a></li>
+                  <li><a class="dropdown-item" href="#">Roll of Honour</a></li>
+                  <li><a class="dropdown-item" href="#">COE Office</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Grievance Committee</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Exam Portals</a></li>
+                </ul>
+              </li>
+
+              <!-- Departments -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white fw-bold"
+                  href="#"
+                  id="dropdown3"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Departments
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdown3"
+                >
+                  <li><a class="dropdown-item" href="#">Architecture</a></li>
+                  <li><a class="dropdown-item" href="#">Applied Science</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Civil Engineering</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Electrical Engineering</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Mechanical & Production</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="#">ECE</a></li>
+                  <li><a class="dropdown-item" href="#">CSE</a></li>
+                  <li><a class="dropdown-item" href="#">IT</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Business Administration</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Computer Applications</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Facilities & Student Life -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white fw-bold"
+                  href="#"
+                  id="dropdown4"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Facilities
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdown4"
+                >
+                  <li><a class="dropdown-item" href="#">Hostels</a></li>
+                  <li><a class="dropdown-item" href="#">Library</a></li>
+                  <li><a class="dropdown-item" href="#">Computer Center</a></li>
+                  <li><a class="dropdown-item" href="#">CML</a></li>
+                  <li><a class="dropdown-item" href="#">Sports</a></li>
+                  <li><a class="dropdown-item" href="#">Workshops</a></li>
+                  <li><a class="dropdown-item" href="#">NCC</a></li>
+                  <li><a class="dropdown-item" href="#">NSS</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Cultural Committee</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Training & Placement</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- Research & Quality -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white fw-bold"
+                  href="#"
+                  id="dropdown5"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  R & Q
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdown5"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">Research & Development</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Consultancy & Testing</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">IPR Cell</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">AICTE / UGC / PTU</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">NBA, NAAC, ISO</a></li>
+                  <li><a class="dropdown-item" href="#">SWAYAM-NPTEL</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">NIRF, ARIIA, NISP</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Best Practices</a></li>
+                  <li><a class="dropdown-item" href="#">TEQIP-II / III</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Unnat Bharat Abhiyan</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white fw-bold"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contactModal"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <section
+        class="d-flex align-items-center text-white"
+        style="
+          min-height: 100vh;
+          background: url('heroImg.jpeg') center/cover no-repeat;
+        "
+      >
+        <div class="container text-center bg-dark bg-opacity-50 p-5 rounded">
+          <h1 class="display-3 fw-bold">Discover GNDEC</h1>
+          <p class="lead">A legacy of excellence in engineering education</p>
+          <button
+            class="btn btn-theme btn-lg mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#applyModal"
+          >
+            Apply Now
+          </button>
+        </div>
+      </section>
+      <!-- <section class="py-5 bg-white">
+        <div class="container text-center">
+          <h2 class="fw-bold mb-3">About Us</h2>
+          <p class="lead">
+            Guru Nanak Dev Engineering College, established in 1956, is one of
+            the most prestigious institutes of North India...
+          </p>
+        </div>
+      </section> -->
+      <section class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 fw-bold">Quick Info</h2>
+          <div class="row g-4">
+            <!-- Card 1: Programs Offered -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="display-4 mb-3">📚</div>
+                  <h5 class="card-title fw-bold">Programs Offered</h5>
+                  <p class="card-text">
+                    UG, PG & Ph.D. programs in engineering, management, and
+                    more.
+                  </p>
+                  <a href="#" class="btn btn-theme btn-sm">Explore</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Accreditation -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="display-4 mb-3">🏆</div>
+                  <h5 class="card-title fw-bold">Accreditation</h5>
+                  <p class="card-text">
+                    NAAC A+, NBA, AICTE, ISO 9001:2015 certified institute.
+                  </p>
+                  <a href="#" class="btn btn-theme btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Placement Stats -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="display-4 mb-3">📊</div>
+                  <h5 class="card-title fw-bold">Placement Stats</h5>
+                  <p class="card-text">
+                    Consistently excellent placement records across top
+                    companies.
+                  </p>
+                  <a href="#" class="btn btn-theme btn-sm">View Status</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Important Dates -->
+            <div class="col-md-6 col-lg-3">
+              <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                  <div class="display-4 mb-3">📅</div>
+                  <h5 class="card-title fw-bold">Important Dates</h5>
+                  <p class="card-text">
+                    Stay updated with the latest admission and academic
+                    schedule.
+                  </p>
+                  <a href="#" class="btn btn-theme btn-sm">Check Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-5 bg-light" id="about">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Left Column: Image -->
+            <div class="col-md-6 mb-4 mb-md-0">
+              <img
+                src="aboutImg.webp"
+                alt="GNDEC Campus"
+                class="img-fluid rounded shadow"
+              />
+            </div>
+
+            <!-- Right Column: Content -->
+            <div class="col-md-6">
+              <h2 class="mb-4 fw-bold" style="color: var(--theme)">
+                About GNDEC
+              </h2>
+              <p>
+                Guru Nanak Dev Engineering College (GNDEC), established in 1956
+                under the aegis of Nankana Sahib Education Trust, is one of the
+                oldest and most prestigious institutions in Northern India.
+                Founded with the vision of uplifting rural students through
+                technology, it continues to serve with excellence in technical
+                education.
+              </p>
+              <p>
+                Affiliated with IKGPTU and approved by AICTE, GNDEC holds
+                autonomous status and is accredited with ‘A’ grade by NAAC. It
+                offers a wide range of UG, PG, and Ph.D. programs with a strong
+                emphasis on research, innovation, and values-based education.
+              </p>
+              <a href="#more-about" class="btn btn-theme">Read More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4 text-theme">Explore GNDEC</h2>
+
+        <!-- Nav Tabs -->
+        <ul
+          class="nav nav-tabs justify-content-center"
+          id="gndecTab"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="about-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#about"
+              type="button"
+              role="tab"
+            >
+              About
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="academics-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#academics"
+              type="button"
+              role="tab"
+            >
+              Academics
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="departments-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#departments"
+              type="button"
+              role="tab"
+            >
+              Departments
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="facilities-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#facilities"
+              type="button"
+              role="tab"
+            >
+              Facilities
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="research-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#research"
+              type="button"
+              role="tab"
+            >
+              Research & Accreditation
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div
+          class="tab-content border border-top-0 p-4 bg-light"
+          id="gndecTabContent"
+        >
+          <!-- About -->
+          <div class="tab-pane fade show active" id="about" role="tabpanel">
+            <h4 class="fw-bold mb-3">About GNDEC</h4>
+            <ul>
+              <li>Principal Desk</li>
+              <li>Administration</li>
+              <li>Vision & Mission</li>
+              <li>Institutional Distinctiveness</li>
+              <li>History & Goals</li>
+            </ul>
+          </div>
+
+          <!-- Academics -->
+          <div class="tab-pane fade" id="academics" role="tabpanel">
+            <h4 class="fw-bold mb-3">Academic Section</h4>
+            <ul>
+              <li>Programs Offered</li>
+              <li>Academic Calendar</li>
+              <li>Post Graduation</li>
+              <li>Information Brochure 2024</li>
+              <li>Examination Portals (Students/Staff)</li>
+              <li>Results & Roll of Honour</li>
+            </ul>
+          </div>
+
+          <!-- Departments -->
+          <div class="tab-pane fade" id="departments" role="tabpanel">
+            <h4 class="fw-bold mb-3">Departments</h4>
+            <ul class="row">
+              <li class="col-md-6">School of Architecture</li>
+              <li class="col-md-6">Civil Engineering</li>
+              <li class="col-md-6">Mechanical & Production Engineering</li>
+              <li class="col-md-6">Electrical Engineering</li>
+              <li class="col-md-6">Electronics & Communication Engineering</li>
+              <li class="col-md-6">Computer Science & Engineering</li>
+              <li class="col-md-6">Information Technology</li>
+              <li class="col-md-6">Business Administration</li>
+              <li class="col-md-6">Computer Applications</li>
+            </ul>
+          </div>
+
+          <!-- Facilities -->
+          <div class="tab-pane fade" id="facilities" role="tabpanel">
+            <h4 class="fw-bold mb-3">Campus Facilities</h4>
+            <ul class="row">
+              <li class="col-md-6">Hostels</li>
+              <li class="col-md-6">Library</li>
+              <li class="col-md-6">Computer Center</li>
+              <li class="col-md-6">Workshops & Labs</li>
+              <li class="col-md-6">Sports</li>
+              <li class="col-md-6">NCC / NSS / Cultural Committee</li>
+              <li class="col-md-6">Green Campus</li>
+            </ul>
+          </div>
+
+          <!-- Research & Accreditation -->
+          <div class="tab-pane fade" id="research" role="tabpanel">
+            <h4 class="fw-bold mb-3">Research & Accreditation</h4>
+            <ul>
+              <li>Research & Development Cell</li>
+              <li>Testing & Consultancy Cell</li>
+              <li>AICTE, UGC, NAAC, NBA Accreditations</li>
+              <li>SWAYAM, NIRF, NISP, ARIIA</li>
+              <li>IQAC & AQAR Reports</li>
+              <li>TCS Accreditation & ISO Certification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Alumni Section -->
+    <section class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4" style="color: #648d2d">
+          Prominent Alumni
+        </h2>
+
+        <div class="overflow-hidden">
+          <marquee
+            behavior="scroll"
+            direction="left"
+            scrollamount="12"
+            onmouseover="this.stop();"
+            onmouseout="this.start();"
+          >
+            <div class="d-flex gap-4">
+              <!-- Alumni Card -->
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Er. Nikhil Gupta</h5>
+                  <p class="card-text">
+                    Batch: 2010<br />Senior Material Manager<br />Indian Railway
+                    Service
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Dr. Satbir Singh</h5>
+                  <p class="card-text">
+                    Batch: 2000<br />Faculty<br />Carnegie Mellon University,
+                    USA
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Er. Rahul Sharma</h5>
+                  <p class="card-text">
+                    Batch: 2006<br />Chief Engineer<br />Brookhoven National
+                    Lab, USA
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Dr. Yogeshwar Hari</h5>
+                  <p class="card-text">
+                    Batch: 1962<br />Professor Emeritus<br />UNC, Charlotte, USA
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Dr. G.D. Mehta</h5>
+                  <p class="card-text">Batch: 1967<br />Scientist<br />USA</p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Er. Karan Bajwa</h5>
+                  <p class="card-text">
+                    Batch: 1988<br />Managing Director<br />IBM India
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    Er. Amandeep Singh Litt
+                  </h5>
+                  <p class="card-text">
+                    Batch: 1991<br />Group CTO<br />Axiata Group, Malaysia
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Dr. Kanav Kahol</h5>
+                  <p class="card-text">
+                    Batch: 2001<br />CTO<br />Pink Rickshaw Design
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Er. Vikas Jain</h5>
+                  <p class="card-text">
+                    Batch: 2004<br />Director<br />KWA Analytics
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    Er. Avneep Singh Dhanju
+                  </h5>
+                  <p class="card-text">
+                    Batch: 2004<br />Software Engineer<br />Microsoft, USA
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">Er. Ravneet Kaur</h5>
+                  <p class="card-text">Batch: 2002<br />Pilot<br />Air India</p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    Dr. Sukhpal Singh Gill
+                  </h5>
+                  <p class="card-text">
+                    Batch: 2006<br />Cloud Computing Professor<br />QMUL, London
+                  </p>
+                </div>
+              </div>
+
+              <div class="card border-success" style="min-width: 250px">
+                <div class="card-body">
+                  <h5 class="card-title text-success">
+                    Er. Shruti Sharma (IAS)
+                  </h5>
+                  <p class="card-text">Batch: 2003<br />IAS Officer</p>
+                </div>
+              </div>
+              <div
+                class="card border-success text-center"
+                style="min-width: 250px; background-color: #648d2d"
+              >
+                <div
+                  class="card-body d-flex align-items-center justify-content-center"
+                >
+                  <a href="#full-alumni-section" class="btn btn-light fw-bold"
+                    >View More →</a
+                  >
+                </div>
+              </div>
+            </div>
+          </marquee>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center text-theme mb-5">News & Announcements</h2>
+        <div class="row">
+          <!-- Column 1 -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Admission (2025-2026)</h5>
+            <ul class="list-unstyled">
+              <li>📌 Direct Counselling for B.Arch – 21st July, 2025</li>
+              <li>📌 B.Tech Counselling Instructions</li>
+              <li>📌 Online Counselling Schedule</li>
+              <li>📌 Enquiry & Registration Module</li>
+              <li>📌 Fee Structure</li>
+              <li>📌 Important Notices & Documents</li>
+              <li>📌 Programs: Robotics, PG Diploma</li>
+            </ul>
+
+            <h5 class="text-theme mt-4">Information Corner</h5>
+            <ul class="list-unstyled">
+              <li>📄 Information Brochure</li>
+              <li>📄 Notice Board</li>
+              <li>📄 BIS Notifications</li>
+              <li>📄 Accreditation Status</li>
+              <li>📄 AICTE Fellowship / Scholarship</li>
+              <li>📄 Vidyanjali Registration</li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Public Corner</h5>
+            <ul class="list-unstyled">
+              <li>📢 FDP on Universal Human Value</li>
+              <li>📢 Insurance Quotation Call</li>
+              <li>📢 Felicitations</li>
+              <li>📢 Guest Addresses</li>
+            </ul>
+
+            <h5 class="text-theme mt-4">Student Corner</h5>
+            <ul class="list-unstyled">
+              <li>📚 Fee Notice Jan-Jun 2025 (Revised)</li>
+              <li>📚 B.Arch Fee Notice (Revised)</li>
+              <li>📚 e-Content by MHRD</li>
+              <li>📚 AICTE Internships & Skill Test</li>
+              <li>📚 Digital Initiatives</li>
+              <li>📚 Ph.D. Info</li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Help Desk</h5>
+            <ul class="list-unstyled">
+              <li>📞 Hostel Enquiries Helpline</li>
+              <li>📞 Anti-Ragging Squad</li>
+              <li>📞 Punjab Police Student Helpline</li>
+              <li>📞 "Shakti" Safety App</li>
+              <li>📞 Caste Discrimination Complaint</li>
+              <li>📞 Disability Resource Centre</li>
+              <li>📞 Staff & Student Verification</li>
+            </ul>
+
+            <h5 class="text-theme mt-4">Campus News</h5>
+            <ul class="list-unstyled">
+              <li>📰 College Newsletter 2024</li>
+              <li>📰 Harmony 2024 Magazine</li>
+              <li>📰 e-Library App Launched</li>
+              <li>📰 National Cyber Crime Awareness</li>
+              <li>📰 GNDEC Alumni Australia Chapter</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center text-theme mb-5">Admission (2025-2026)</h2>
+        <div class="row">
+          <!-- Important Dates -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 border rounded h-100 shadow-sm bg-white">
+              <h5 class="text-theme">📅 Important Dates</h5>
+              <ul class="list-unstyled mt-3">
+                <li>• B.Arch Counselling: <strong>21st July, 2025</strong></li>
+                <li>• Instructions for B.Tech Allotment</li>
+                <li>• IKGPTU Online Counselling Schedule</li>
+                <li>• Admission Enquiry & Registration</li>
+                <li>• Fee Structure & Checklist</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Programs Offered -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 border rounded h-100 shadow-sm bg-white">
+              <h5 class="text-theme">🎓 Programs Offered</h5>
+              <ul class="list-unstyled mt-3">
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >B.Tech in Robotics & AI</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >PG Diploma in Econometrics</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >MBA, BBA, B.Com</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >BCA, MCA</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >B.Arch & B.Voc</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-dark text-decoration-none"
+                    >B.Tech (Working Professionals)</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Admission Helplines -->
+          <div class="col-md-4 mb-4">
+            <div class="p-4 border rounded h-100 shadow-sm bg-white">
+              <h5 class="text-theme">☎️ Admission Helplines</h5>
+              <ul class="list-unstyled mt-3 small">
+                <li>
+                  <strong>B.Tech & M.Tech:</strong> 9041495448, 8968553073
+                </li>
+                <li>
+                  <strong>BBA, B.Com & MBA:</strong> 9815903230, 9417992553
+                </li>
+                <li><strong>BCA & MCA:</strong> 9876700810, 9417271184</li>
+                <li><strong>B.Arch & B.Voc:</strong> 8427866335, 7696521055</li>
+                <li>
+                  <strong>Working Professionals:</strong> 9465196630 (CE),
+                  9914255011 (ME)
+                </li>
+                <li><strong>Sikh Religion Exam:</strong> 9041464904</li>
+                <li><strong>WhatsApp:</strong> 73472-00448</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-light pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-light text-decoration-none">RTI'05</a>
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >Downloads</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none"
+                  >FM 90.8 Radio</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-light text-decoration-none">E-Mail</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Contact Us</h5>
+            <p class="small mb-1">Guru Nanak Dev Engineering College</p>
+            <p class="small mb-1">Gill Road, Ludhiana, Punjab, India</p>
+            <p class="small mb-1">📞 +91-161-2490339, +91-161-5064501</p>
+            <p class="small">✉️ principal@gndec.ac.in</p>
+          </div>
+
+          <!-- Social Media -->
+          <div class="col-md-4 mb-4">
+            <h5 class="text-theme">Follow Us</h5>
+            <div class="d-flex">
+              <a href="#" class="text-light fs-5 me-3"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-light fs-5 me-3"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a href="#" class="text-light fs-5 me-3"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-light fs-5 me-3"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="text-light fs-5"
+                ><i class="bi bi-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <hr class="border-light" />
+        <div class="text-center small">
+          <p class="mb-0">
+            © 2025 Guru Nanak Dev Engineering College. All rights reserved.
+          </p>
+          <p class="mb-0">
+            Site designed and maintained by Central Computer Center, GNDEC,
+            Ludhiana
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-theme"
+      data-bs-toggle="modal"
+      data-bs-target="#contactModal"
+    >
+      Contact Us
+    </button> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-3">
+          <div class="modal-header bg-theme text-white">
+            <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="3"
+                  placeholder="Write your message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-theme w-100">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Apply Now Modal -->
+    <div class="modal fade" id="applyModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Admission Enquiry</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input
+                class="form-control mb-2"
+                type="text"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                class="form-control mb-2"
+                type="email"
+                placeholder="Email"
+                required
+              />
+              <textarea
+                class="form-control mb-2"
+                placeholder="Your Message"
+                rows="3"
+              ></textarea>
+              <button type="submit" class="btn btn-theme">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
